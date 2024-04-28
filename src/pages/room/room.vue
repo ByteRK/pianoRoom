@@ -1,7 +1,7 @@
 <template>
     <view class="demo">
         <view>
-            会员管理
+            琴房管理
         </view>
         <view>{{ count }}</view>
         <view>
@@ -24,7 +24,7 @@ const handleClick = () => {
 };
 </script>
 
-<style>
+<style lang="less">
 .demo {
     height: 100%;
     display: flex;

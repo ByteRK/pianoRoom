@@ -20,13 +20,13 @@ const color = '#000000'
 const selectedColor = '#DC143C'
 const list = [
     {
-        pagePath: "/pages/admin-room/admin-room",
+        pagePath: "/pages/room/room",
         iconPath: "/image/icon_component.png",
         selectedIconPath: "/image/icon_component_HL.png",
         text: "琴房管理"
     },
     {
-        pagePath: "/pages/admin-user/admin-user",
+        pagePath: "/pages/user/user",
         iconPath: "/image/icon_API.png",
         selectedIconPath: "/image/icon_API_HL.png",
         text: "会员管理"

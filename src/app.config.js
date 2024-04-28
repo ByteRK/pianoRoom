@@ -1,11 +1,21 @@
 export default defineAppConfig({
   pages: [
     'pages/login/login',
-    
-    'pages/user/user',
 
-    'pages/admin-room/admin-room',
-    'pages/admin-user/admin-user',
+    'pages/room/room',
+    'pages/user/user',
+    
+    // 'template/user/index/index',
+  ],
+  subpackages: [
+    {
+      "root": "template/user",
+      "name": "user",
+      "pages": [
+        "index/index"
+      ],
+      "independent": false
+    }
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -16,11 +26,11 @@ export default defineAppConfig({
   tabBar: {
     list: [
       {
-        pagePath: 'pages/admin-room/admin-room',
+        pagePath: 'pages/room/room',
         text: '最新',
       },
       {
-        pagePath: 'pages/admin-user/admin-user',
+        pagePath: 'pages/user/user',
         text: '热门',
       },
     ],

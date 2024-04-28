@@ -1,37 +1,35 @@
 <template>
-  <view class="demo">
-    <view>
-      欢迎使用 NutUI 开发 Taro 多端项目 <Dongdong />
+    <view class="demo">
+        <view>
+            会员管理
+        </view>
+        <view>{{ count }}</view>
+        <view>
+            <nut-button type="primary" @click="handleClick">
+                Count++
+            </nut-button>
+        </view>
     </view>
-    <view>{{ count }}</view>
-    <view>
-      <nut-button type="primary" @click="handleClick">
-        Count++
-      </nut-button>
-    </view>
-  </view>
 </template>
 
 <script setup>
-import Taro from '@tarojs/taro';
+// import Taro from '@tarojs/taro'
 import { ref } from 'vue';
-import { Dongdong } from '@nutui/icons-vue-taro';
+// import { useDidShow, useLoad } from '@tarojs/taro'
 
 const count = ref(0);
 
 const handleClick = () => {
-  count.value++;
+    count.value++;
 };
-
-Taro.hideHomeButton()
 </script>
 
-<style>
+<style lang="less">
 .demo {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 </style>

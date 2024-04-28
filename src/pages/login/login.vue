@@ -115,11 +115,11 @@ const login = {
       setTimeout(() => {
         if (login.type === 0) {
           Taro.redirectTo({
-            url: '/pages/user/user'
+            url: '/template/user/index/index'
           });
         } else if (login.type === 1) {
           Taro.switchTab({
-            url: '/pages/admin-room/admin-room'
+            url: '/pages/room/room'
           });
         }
       }, 500);
