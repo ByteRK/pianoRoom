@@ -2,7 +2,6 @@
     <view class="demo">
         <view>
             会员管理
-            <Dongdong />
         </view>
         <view>{{ count }}</view>
         <view>
@@ -14,8 +13,9 @@
 </template>
 
 <script setup>
+// import Taro from '@tarojs/taro'
 import { ref } from 'vue';
-import { Dongdong } from '@nutui/icons-vue-taro';
+// import { useDidShow, useLoad } from '@tarojs/taro'
 
 const count = ref(0);
 

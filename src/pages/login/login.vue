@@ -114,7 +114,7 @@ const login = {
       callNotifyState('primary', '登陆成功');
       setTimeout(() => {
         if (login.type === 0) {
-          Taro.navigateTo({
+          Taro.redirectTo({
             url: '/pages/user/user'
           });
         } else if (login.type === 1) {
@@ -122,12 +122,10 @@ const login = {
             url: '/pages/admin-room/admin-room'
           });
         }
-      }, 2000);
+      }, 500);
     },
     fail() {
-      setTimeout(() => {
-        callNotifyState('danger', '登陆失败');
-      }, 2000);
+      callNotifyState('danger', '登陆失败');
     },
   }
 };
