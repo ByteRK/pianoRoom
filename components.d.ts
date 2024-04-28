@@ -8,12 +8,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Header: typeof import('./src/components/header/header.vue')['default']
+    Integral: typeof import('./src/components/user/integral.vue')['default']
+    NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutButton: typeof import('@nutui/nutui-taro')['Button']
     NutDialog: typeof import('@nutui/nutui-taro')['Dialog']
     NutForm: typeof import('@nutui/nutui-taro')['Form']
     NutFormItem: typeof import('@nutui/nutui-taro')['FormItem']
-    NutImage: typeof import('@nutui/nutui-taro')['Image']
     NutInput: typeof import('@nutui/nutui-taro')['Input']
     NutNotify: typeof import('@nutui/nutui-taro')['Notify']
+    NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
+    NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
   }
 }

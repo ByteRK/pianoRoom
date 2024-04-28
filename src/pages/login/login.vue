@@ -4,10 +4,16 @@
     <nut-notify :type="notifyState.type" v-model:visible="notifyState.show" :msg="notifyState.desc" />
 
     <view class="user_switch">
-      <nut-button size="large" type="info" @click="login.methods.showPop(0)" icon="my2">
+      <nut-button size="large" :disabled="login.info.btDisabled" type="info" @click="login.methods.showPop(0)" icon="my2">
+        <template #icon>
+          <My2 />
+        </template>
         会员登陆
       </nut-button>
-      <nut-button size="large" type="primary" @click="login.methods.showPop(1)">
+      <nut-button size="large" :disabled="login.info.btDisabled" type="primary" @click="login.methods.showPop(1)">
+        <template #icon>
+          <People />
+        </template>
         管理员登陆
       </nut-button>
     </view>
@@ -33,6 +39,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import Taro from '@tarojs/taro';
+import { My2, People } from '@nutui/icons-vue-taro'
 
 const notifyState = reactive({
   show: false,
@@ -65,6 +72,7 @@ const login = {
   type: 0,
   info: reactive({
     visible: false,
+    btDisabled:false,
     name: '',
     psw: '',
     title: '会员登陆',
@@ -112,6 +120,7 @@ const login = {
     success() {
       console.log('登陆成功');
       callNotifyState('primary', '登陆成功');
+      login.info.btDisabled = true;
       setTimeout(() => {
         if (login.type === 0) {
           Taro.redirectTo({
@@ -122,7 +131,7 @@ const login = {
             url: '/pages/room/room'
           });
         }
-      }, 500);
+      }, 1200);
     },
     fail() {
       callNotifyState('danger', '登陆失败');

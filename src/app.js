@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import store from './store'
 import './app.less'
+// import "@nutui/nutui-taro/dist/style.css";
 
 const App = createApp({
   onShow (options) {},
