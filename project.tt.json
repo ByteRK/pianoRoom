@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "pianoRoom",
+  "description": "琴房管理系统",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
