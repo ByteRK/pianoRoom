@@ -130,6 +130,7 @@ const login = {
             url: '/template/user/index/index'
           });
         } else if (login.type === 1) {
+          Taro.setStorageSync('adminLevel', 2);
           Taro.switchTab({
             url: '/pages/room/room'
           });
@@ -146,7 +147,6 @@ const login = {
 </script>
 
 <style lang="less">
-
 .demo {
   overflow: hidden;
 }

@@ -28,6 +28,7 @@ export default {
     },
     methods: {
         exit() {
+            Taro.removeStorageSync('adminLevel')
             Taro.redirectTo({
                 url: '/pages/login/login'
             });
