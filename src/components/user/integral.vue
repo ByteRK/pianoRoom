@@ -1,12 +1,12 @@
 <!-- integral.vue -->
 <template>
     <view class="mUserIntegralBox">
-        <!-- <image class="image" src="" mode="aspectFill" round /> -->
-        <nut-avatar class="image" size="large" bg-color="#fde3cf">
-            <img :src="uImg" />
-            <!-- <My /> -->
-        </nut-avatar>
-        <p class="name">会员名: {{ uName }}</p>
+        <view class="info">{{ dTime }} 会员积分：{{ dIntegral }}</view>
+        <view class="detail">
+            <view class="detail_item">练习 +{{ dPractise }}</view>
+            <view class="detail_item">奖励 +{{ dAward }}</view>
+            <view class="detail_item">兑换 -{{ dExchange }}</view>
+        </view>
     </view>
 </template>
 
@@ -14,35 +14,64 @@
 export default {
     name: 'UserIntegral',
     props: {
-        uName: String,
-        uImg: {
-            uImg: String,
-            default: ''
+        dTime: {
+            dTime: String,
+            default: 'xxxx.xx.xx'
+        },
+        dIntegral: {
+            dIntegral: Number,
+            default: 0
+        },
+        dPractise: {
+            dPractise: Number,
+            default: 0
+        },
+        dAward: {
+            dAward: Number,
+            default: 0
+        },
+        dExchange: {
+            dExchange: Number,
+            default: 0
         }
     }
 }
 </script>
 
 <style lang="less">
-.mHeaderBox {
-    height: 150px;
-    width: 90%;
+.mUserIntegralBox {
+    height: auto;
+    width: 100%;
     background: #fff;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: initial;
-    border-bottom: 4px solid #4c81f3;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #b2bec3;
 
-    .image {
-        box-shadow: 1px 1px 3px #8d807780;
+    &::before {
+        content: "";
+        position: absolute;
+        margin-top: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: #fab1a0;
+        border-radius: 50%;
     }
 
-    .name {
-        font-size: 1.4em;
-        align-self: flex-end;
+    .info {
+        color: #000;
         font-weight: bold;
-        margin-bottom: 25px;
-        margin-left: 40px;
+        display: block;
+        padding-left: 50px;
+    }
+
+    .detail {
+        padding-top: 30px;
+        padding-left: 50px;
+
+        .detail_item {
+            display: block;
+            color: #b2bec3;
+        }
     }
 }
 </style>
