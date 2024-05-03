@@ -4,12 +4,15 @@
     <nut-notify :type="notifyState.type" v-model:visible="notifyState.show" :msg="notifyState.desc" />
 
     <view class="user_switch">
-      <nut-button size="large" :disabled="login.info.btDisabled" type="info" @click="login.methods.showPop(0)" icon="my2">
-        <template #icon>
-          <My2 />
-        </template>
-        会员登陆
-      </nut-button>
+      <nut-animate type="breath" loop duration="3000">
+        <nut-button size="large" :disabled="login.info.btDisabled" type="info" @click="login.methods.showPop(0)"
+          icon="my2">
+          <template #icon>
+            <My2 />
+          </template>
+          会员登陆
+        </nut-button>
+      </nut-animate>
       <nut-button size="large" :disabled="login.info.btDisabled" type="primary" @click="login.methods.showPop(1)">
         <template #icon>
           <People />
@@ -72,7 +75,7 @@ const login = {
   type: 0,
   info: reactive({
     visible: false,
-    btDisabled:false,
+    btDisabled: false,
     name: '',
     psw: '',
     title: '会员登陆',
@@ -143,6 +146,7 @@ const login = {
 </script>
 
 <style lang="less">
+
 .demo {
   overflow: hidden;
 }
@@ -153,6 +157,14 @@ const login = {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  .nut-animate {
+    margin: 30px 0;
+
+    .nut-button {
+      margin: 0
+    }
+  }
 
   .nut-button {
     margin: 30px 0;

@@ -1,6 +1,6 @@
-<!-- MyHeader.vue -->
+<!-- integral.vue -->
 <template>
-    <view class="mHeaderBox">
+    <view class="mUserIntegralBox">
         <!-- <image class="image" src="" mode="aspectFill" round /> -->
         <nut-avatar class="image" size="large" bg-color="#fde3cf">
             <img :src="uImg" />
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: 'MyHeader',
+    name: 'UserIntegral',
     props: {
         uName: String,
         uImg: {

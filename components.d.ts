@@ -7,8 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Header: typeof import('./src/components/header/header.vue')['default']
+    Header: typeof import('./src/components/public/header.vue')['default']
     Integral: typeof import('./src/components/user/integral.vue')['default']
+    NutAnimate: typeof import('@nutui/nutui-taro')['Animate']
     NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutButton: typeof import('@nutui/nutui-taro')['Button']
     NutDialog: typeof import('@nutui/nutui-taro')['Dialog']
@@ -18,5 +19,6 @@ declare module 'vue' {
     NutNotify: typeof import('@nutui/nutui-taro')['Notify']
     NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
     NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
+    Piano: typeof import('./src/components/user/piano.vue')['default']
   }
 }

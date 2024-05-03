@@ -1,8 +1,6 @@
 <template>
     <view class="demo">
-        <view>
-            会员管理
-        </view>
+        <MyHeader uName="123" uType="管理员" />
         <view>{{ count }}</view>
         <view>
             <nut-button type="primary" @click="handleClick">
@@ -16,6 +14,7 @@
 // import Taro from '@tarojs/taro'
 import { ref } from 'vue';
 // import { useDidShow, useLoad } from '@tarojs/taro'
+import MyHeader from '../../components/public/header.vue'
 
 const count = ref(0);
 
