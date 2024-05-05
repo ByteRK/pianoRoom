@@ -3,21 +3,17 @@
         <MyHeader uName="123" uType="管理员" />
         <nut-tabs v-model="tabvalue" class="nut-tabs" background="#eef5ff" :swipeable="false">
             <nut-tab-pane title="积分上传" pane-key="1">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <IntegralUpdate />
             </nut-tab-pane>
 
             <nut-tab-pane title="积分统计" pane-key="2">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
+                <scroll-view class="scrollview" :scroll-y="true" :enableBackToTop="true" :refresherEnabled="true">
+                    <integralStatistic />
                 </scroll-view>
             </nut-tab-pane>
 
             <nut-tab-pane title="会员增值" pane-key="3" v-if="adminLevel == 2">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <integralAdded />
             </nut-tab-pane>
 
         </nut-tabs>
@@ -30,6 +26,9 @@ import { useDidShow, useLoad } from '@tarojs/taro'
 import { ref } from 'vue';
 import { useStore } from 'vuex'
 import MyHeader from '../../components/public/header.vue'
+import IntegralUpdate from '../../components/admin/integralUpdate.vue'
+import integralStatistic from '../../components/admin/integralStatistics.vue'
+import integralAdded from '../../components/admin/integralAdded.vue'
 
 const store = useStore()
 
@@ -90,7 +89,7 @@ function lower(e) {
     }
 
     .scrollview {
-        height: calc(100vh - 150px - 92px - env(safe-area-inset-bottom));
+        height: calc(100vh - 150px - 92px - env(safe-area-inset-bottom) - 100px);
     }
 }
 </style>

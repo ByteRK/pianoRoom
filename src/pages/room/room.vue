@@ -3,27 +3,19 @@
         <MyHeader uName="123" uType="管理员" />
         <nut-tabs v-model="tabvalue" class="nut-tabs" background="#eef5ff" :swipeable="false">
             <nut-tab-pane title="租用上传" pane-key="1">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <PianoUpdate />
             </nut-tab-pane>
 
             <nut-tab-pane title="租用统计" pane-key="2">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <PianoStatistics />
             </nut-tab-pane>
 
             <nut-tab-pane title="增值" pane-key="3" v-if="adminLevel == 2">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <PianoAdded />
             </nut-tab-pane>
 
             <nut-tab-pane title="导出" pane-key="4" v-if="adminLevel == 2">
-                <scroll-view class="scrollview" @scrolltoupper="upper" @scrolltolower="lower" :scroll-y="true"
-                    :enableBackToTop="true" :refresherEnabled="true">
-                </scroll-view>
+                <PianoExport />
             </nut-tab-pane>
 
         </nut-tabs>
@@ -36,6 +28,10 @@ import { useDidShow, useLoad } from '@tarojs/taro'
 import { ref } from 'vue';
 import { useStore } from 'vuex'
 import MyHeader from '../../components/public/header.vue'
+import PianoUpdate from '../../components/admin/pianoUpdate.vue'
+import PianoStatistics from '../../components/admin/pianoStatistics.vue'
+import PianoAdded from '../../components/admin/pianoAdded.vue'
+import PianoExport from '../../components/admin/pianoExport.vue'
 
 const store = useStore()
 
@@ -95,7 +91,7 @@ function lower(e) {
     }
 
     .scrollview {
-        height: calc(100vh - 150px - 92px - env(safe-area-inset-bottom));
+        height: calc(100vh - 150px - 92px - env(safe-area-inset-bottom) - 100px);
     }
 }
 </style>
